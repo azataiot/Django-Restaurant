@@ -1,0 +1,7 @@
+{% extends 'menubase.html' %}
+{% block sebet %}
+     <form action="{% url 'menu' %}2/" method="post">
+     <input class="form-control hidden" type="text" name="tamaq" value="{{ foo.aty }}">
+     <button class="btn btn-info btn-block btn-xs" type="submit">Себетке қосу</button>
+     {% csrf_token %}</form>
+{% endblock %}

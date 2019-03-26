@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Ресторан</title>
+
+    <!-- Bootstrap -->
+    <link href="https://bootswatch.com/3/united/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Ресторан</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'index' %}">Басты бет</a></li>
+                <li><a href="{% url 'reservation' %}">Үстел брондау</a></li>
+                <li><a href="{% url 'menu' %}1/">Мәзір</a></li>
+                <li><a href="{% url 'about' %}">Жоба жайлы</a></li>
+                <li>
+                    <a href="{% url 'cart' %}">
+                        <img style="width:20px;" src="http://cdn.onlinewebfonts.com/svg/img_208967.png" alt="cart">
+                        <span></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="text-center">Қош келдіңіз!</h1>
+    <div class="video" style="float:left; padding: 0 10px 0 0;">
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/upDMH_E0Z7M"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+    <p style="text-align: justify; font-size: 17px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus ad alias autem dolore est
+        facere fugiat iusto maiores nihil odio perferendis placeat possimus, praesentium qui saepe sed, vitae
+        voluptatibus.</p><p>A alias amet beatae cumque debitis dicta dignissimos doloremque doloribus
+        facilis, ipsa labore laudantium magnam modi mollitia nisi numquam odit officia qui recusandae repellat
+        sapiente sed sit sunt vero voluptatibus.</p><p>Atque cumque illum numquam saepe sapiente!
+        Asperiores dicta distinctio illum iure labore modi nisi, optio placeat provident, quia, tenetur ullam
+        voluptate voluptatibus. Atque dignissimos doloremque explicabo hic quibusdam sint voluptas?</p><p>
+        Incidunt numquam quaerat reprehenderit ullam vero. Accusamus assumenda commodi consectetur, consequuntur
+        distinctio dolor et harum libero necessitatibus nemo porro provident quibusdam rem rerum, sunt suscipit,
+        tempore. Commodi doloribus et iste.</p><p>Corporis incidunt inventore perferendis rem! Accusantium
+        aperiam atque aut, eaque eius maiores neque obcaecati officia provident ullam? Ad architecto doloremque
+        dolorum esse, magni maxime, modi perferendis quasi qui temporibus vel?</p> <p>Lorem ipsum dolor sit
+        amet, consectetur adipisicing elit. Earum enim est exercitationem facilis in ipsa minus nesciunt nisi,
+        nobis quam quasi quia vel voluptate voluptatem voluptates! Amet minus omnis qui?</p><p>Ab aliquam
+        aliquid culpa dicta distinctio itaque magni quae sequi? Alias autem culpa dignissimos doloremque error
+        est expedita labore, laborum laudantium molestiae officia placeat praesentium provident reiciendis rem
+        similique, sint!</p><p>Culpa eum exercitationem necessitatibus nemo reprehenderit velit voluptas!
+        Adipisci debitis deserunt distinctio, excepturi harum itaque iusto laudantium libero magni reiciendis
+        sapiente vitae voluptates. Commodi explicabo laborum non quis ratione repellat.</p><p>A accusamus
+        aliquam atque debitis deserunt dolorem earum facere fugiat incidunt ipsam iure laborum magnam magni
+        nemo nihil nulla omnis, quasi rem soluta tempora, ut voluptate voluptatibus! Eum, fugit quod?</p><p>
+        Error, impedit molestias! A alias aperiam delectus deserunt dolores expedita laudantium nihil odit omnis,
+        porro reiciendis rerum voluptatem. Doloremque doloribus eligendi est ex impedit inventore maiores
+        necessitatibus quae sequi tempore!</p>
+    </p>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

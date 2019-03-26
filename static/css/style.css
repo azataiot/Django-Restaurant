@@ -1,0 +1,45 @@
+.item-menu {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+.item-menu img {
+	width: 100%;
+}
+
+.item-menu h3,
+.item-menu h2,
+.item-menu p {
+	text-align: center;
+}
+
+.item-menu h3 {
+	font-size: 17px;
+	margin: 10px 0;
+}
+
+.item-menu h2 {
+	margin: 0 0 10px 0;
+	font-size: 23px;
+}
+
+.catalog-box {
+	display: flex;
+	margin: 10px 0;
+	justify-content: center;
+}
+
+.catalog-box a {
+	display: inline-block;
+	padding: 7px 15px;
+	background: #d34615;
+	margin: 5px;
+	color: white;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+.catalog-box a:hover {
+	background: #902c09;
+}

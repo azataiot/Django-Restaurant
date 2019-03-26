@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Ресторан</title>
+
+    <!-- Bootstrap -->
+    <link href="https://bootswatch.com/3/united/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Ресторан</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'index' %}">Басты бет</a></li>
+                <li><a href="{% url 'reservation' %}">Үстел брондау</a></li>
+                <li><a href="{% url 'menu' %}1/">Мәзір</a></li>
+                <li><a href="{% url 'about' %}">Жоба жайлы</a></li>
+                <li>
+                    <a href="{% url 'cart' %}0/">
+                        <img style="width:20px;" src="http://cdn.onlinewebfonts.com/svg/img_208967.png" alt="cart">
+                        <span></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="text-center">Мәзір</h1>
+    <div class="container center-block text-center">
+        <h2>{{ msg }}</h2>
+    </div>
+{#    <div class="catalog-box">#}
+{#        {% for foo in all_sanat %}#}
+{#        <form action="{{ foo.id }}/" method="post">#}
+{#                <input class="form-control hidden" type="text" name="menuname">#}
+{#                <button class="btn" type="submit">Кіру</button>#}
+{#                <a href="{{ foo.id }}">{{ foo.sanat_aty }}</a>#}
+{#        {% csrf_token %}#}
+{#        {% endfor %}</form>#}
+{#    </div>#}
+</div>
+{#<div class="container">#}
+{#starts here#}
+{#    <div id='1' class="row">#}
+{#        {% for foo in tamaq_1 %}#}
+{#        <div class="col-md-3">#}
+{#            <div  class="item-menu">#}
+{#                <img src="{{ MEDIA_URL }}{{ foo.suret }}">#}
+{#                <h3>{{ foo.aty }}</h3>#}
+{#                <p>Салмағы: {{ foo.salmagi }} гр</p>#}
+{#                <h2>{{ foo.baga }} теңге</h2>#}
+{#                <button class="btn btn-info btn-block btn-xs">Себетке қосу</button>#}
+{#            </div>#}
+{#        </div>#}
+{#        {% endfor %}#}
+{#    </div>#}
+{##}
+{#    <div class="row">#}
+{#        {% for foo in tamaq %}#}
+{#        <div class="col-md-3">#}
+{#            <div  class="item-menu">#}
+{#                <img src="{{ MEDIA_URL }}{{ foo.suret }}">#}
+{#                <h3>{{ foo.aty }}</h3>#}
+{#                <p>Салмағы: {{ foo.salmagi }} гр</p>#}
+{#                <h2>{{ foo.baga }} теңге</h2>#}
+{#                <button class="btn btn-info btn-block btn-xs">Себетке қосу</button>#}
+{#            </div>#}
+{#        </div>#}
+{#        {% endfor %}#}
+{#    </div>#}
+{#</div>#}
+{#endshere#}
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

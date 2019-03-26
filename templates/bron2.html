@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Ресторан</title>
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+    {{ form.media }}
+    <!-- Bootstrap -->
+    {% load static %}
+    <script src="{% static 'laydate/laydate.js' %}"></script>
+    <script class="src">{% static 'js/moment.js' %}</script>
+    <script class="src">{% static 'js/bootstrap.js' %}</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
+    <link href="https://bootswatch.com/3/united/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Ресторан</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'index' %}">Басты бет</a></li>
+                <li><a href="{% url 'reservation' %}">Үстел брондау</a></li>
+                <li><a href="{% url 'menu' %}1/">Мәзір</a></li>
+                <li><a href="{% url 'about' %}">Жоба жайлы</a></li>
+                <li>
+                    <a href="{% url 'cart' %}0/">
+                        <img style="width:20px;" src="http://cdn.onlinewebfonts.com/svg/img_208967.png" alt="cart">
+                        <span></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="text-center">Үстел брондау</h1>
+    <div class="container">
+        <h3 class="bg-warning text-center">Тапсырыс берілетін кестені тексеру үшін күн мен уақытты таңдаңыз</h3>
+        {#        #}
+        <div class="form-group col-md -6">
+            <input type="text" id="test1">
+            {% load static %}
+            <script src="{% static 'laydate/laydate.js' %}"></script> <!-- 改成你的路径 -->
+            <script>
+//执行一个laydate实例
+laydate.render({
+  elem: '#test1' //指定元素
+  ,type: 'datetime'
+  ,lang: 'en'
+});
+</script>
+        </div>
+        <div class="form-group col-md-6">
+            <button class="btn btn-info">Көрсету</button>
+        </div>
+    </form>
+    {% csrf_token %}
+    </div>
+    <table class="table table-bordered text-center">
+        <tr>
+            <th class="text-center">Үстел нөмері</th>
+            <th class="text-center">Уақыты</th>
+            <th class="text-center">Статусы</th>
+            <th class="text-center">Әрекет</th>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>17:00</td>
+            <td>
+                <div style="color: red;">Бос емес</div>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>17:00</td>
+            <td>
+                <div style="color: green;">Бос</div>
+            </td>
+            <td>
+                <a href=""{% url 'bronact' %}">Брондау</a>
+            </td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>17:00</td>
+            <td>
+                <div style="color: green;">Бос</div>
+            </td>
+            <td>
+                <a href=""{% url 'bronact' %}">Брондау</a>
+            </td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>17:00</td>
+            <td>
+                <div style="color: green;">Бос</div>
+            </td>
+            <td>
+                <a href=""{% url 'bronact' %}">Брондау</a>
+            </td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>17:00</td>
+            <td>
+                <div style="color: green;">Бос</div>
+            </td>
+            <td>
+                <a href=""{% url 'bronact' %}">Брондау</a>
+            </td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>17:00</td>
+            <td>
+                <div style="color: green;">Бос</div>
+            </td>
+            <td>
+                <a href=""{% url 'bronact' %}">Брондау</a>
+            </td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>17:00</td>
+            <td>
+                <div style="color: red;">Бос емес</div>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>17:00</td>
+            <td>
+                <div style="color: green;">Бос</div>
+            </td>
+            <td>
+                <a href=""{% url 'bronact' %}">Брондау</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+$(function () {
+$('#datetimepicker1').datetimepicker();
+});
+</script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+{% load static %}
+<script src="{% static 'laydate/laydate.js' %}"></script> <!-- 改成你的路径 -->
+<script class="src">{% static 'js/moment.js' %}</script>
+<script class="src">{% static 'js/bootstrap.js' %}</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

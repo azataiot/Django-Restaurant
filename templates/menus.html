@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Ресторан</title>
+
+    <!-- Bootstrap -->
+    <link href="https://bootswatch.com/3/united/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Ресторан</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'bash' %}">Басты бет</a></li>
+                <li><a href="{% url 'orders' %}">Үстелге тапсырыстар</a></li>
+                <li><a href="{% url 'menus' %}">Мәзірлерді басқару</a></li>
+                <li><a href="{% url 'logout' %}">Шығу</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="text-center">Мәзірлерді басқару</h1>
+
+    {% if addsucc %}
+        <h2 class="text-center">{{ addsucc }}</h2>
+    {% endif %}
+    {% if delsucc %}
+        <h2 class="text-center">{{ delsucc }}</h2>
+    {% endif %}
+
+    <a href="{% url 'add' %}" class="btn btn-info">Жаңасын қосу</a>
+    <br>
+    <br>
+
+    <table class="table table-bordered text-center">
+        <tr>
+            <th class="text-center">ID</th>
+            <th class="text-center">Суреті</th>
+            <th class="text-center">Тағам атауы</th>
+            <th class="text-center">Грамм</th>
+            <th class="text-center">Бағасы</th>
+            <th class="text-center">Әрекет</th>
+        </tr>
+        {% for foo in all_tamaq %}
+             <tr>
+                <td>{{ foo.id }}</td>
+                <td>
+                    <img style="width:50px; height: 50px;" src="{{ MEDIA_URL }}{{ foo.suret }}">
+                </td>
+                <td>{{ foo.aty }}</td>
+                <td>{{ foo.salmagi }} грамм</td>
+                <td>{{ foo.baga }} тг</td>
+                <td>
+{#                    editoneitem#}
+                    <form action="{% url 'editfood' %}" method="post">
+                        <input class="hidden" type="text" name="action_type" value="EDIT">
+                        <input class="hidden" type="text" name="item_id" value="{{ foo.id }}">
+                        <input class="hidden" type="text" name="item_name" value="{{ foo.aty }}">
+                        <input class="hidden" type="text" name="item_salmagi" value="{{ foo.salmagi }}">
+                        <input class="hidden" type="text" name="item_baga" value="{{ foo.baga }}">
+                        <input class="hidden" type="file" name="item_suret" value="{{ foo.suret.url }}">
+                        <button class="btn btn-info" type="submit">Өзгерту</button>
+                        {% csrf_token %}
+                    </form>
+                    <br>
+{#                    delete one item#}
+                    <form action="{% url 'menus' %}" method="post">
+                        <input class="hidden" type="text" name="item_id" value="{{ foo.id }}">
+                        <button class="btn btn-default" type="submit">Жою</button>
+                        {% csrf_token %}
+                    </form>
+                </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
